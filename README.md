@@ -1,4 +1,4 @@
 # C++
 Variables :heavy_check_mark:
 
-Arithmetic Operators
+Arithmetic Operators :heavy_check_mark:
