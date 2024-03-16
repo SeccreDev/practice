@@ -3,6 +3,20 @@ using namespace std;
 
 int main()
 {
+	/*
+	* Relational Operators - are used to compare numeric and char values to determine relative order 
+	* Operators: (> greater than, < less than, >= greater than or equal to, <= less than or equal to, == equal to, != not equal to)
+	* Relational expression results in a boolean, they either evaluate to true or to false
+	* The Hierarchy of the relational operators: -Highest (> >= < <=)  -Lowest (== !=)
+	*/
+	int number1 = 2, number2 = 100;
+	bool theResult = (number1 == number2);
+	cout << (number1 < number2) << endl; // It will output 1, which means the result is true
+	cout << (number1 > number2) << endl; // It will output 0, which means the result is false
+	cout << (number1 != number2) << endl; // True
+	cout << theResult << endl;
+
+
 	// if statement - supports the use of a decision structure, giving a program more than one path of execution. Statements are conditionally executed or skipped over depending if the condition passes.
 	int number = 5;
 	if (number == 5) // As the condition passes, the statements inside the braces '{}' will be executed.  Curly braces {} can be omitted if the statements inside the 'if' block is one statement
@@ -57,7 +71,7 @@ int main()
 		cout << "The inputted number does not represent a month." << endl;
 		validMonth = false; //  Flag set to false as the inputted number does not represent a month
 	}
-
+	
 	if (validMonth) // Condition will be evaluated. The previous if statement determines if the flag is true or false.
 	{
 		if (monthNumber == 1) // Nested if statements. If statements within an if statement to evaluate more than one condition
@@ -109,7 +123,29 @@ int main()
 			cout << "The month is December." << endl;
 		}
 	}
+	
 
+	/*
+	* Logical Operators - used to create relational expressions from other relation expressions
+	* Operators: (&& - means 'and' evaluates to true if both expressions are true)
+	*			 (|| - means 'or' evaluates to true if one of the expressions is true)
+	*			 (! - means 'not' reverses the value of the expression. true expression becomes false and vice versa)
+	* The Hierarchy of the logical operators: -Highest (!)  -Mid (&&)  -Lowest (||)
+	*/
+	bool logicTrue = true;
+	int randomNumber = 2;
+	int randomNumber2 = 3;
+	
+	if (randomNumber > randomNumber2 || logicTrue)
+	{
+		cout << "This will execute as long as one of the values is true" << endl;
+	}
+
+	if (randomNumber < randomNumber2 && logicTrue)
+	{
+		cout << "This will execute as long as both of the values are true" << endl;
+	}
+	
 	// Menu-Driven Program - the program is controlled by user selecting from a list of actions. In this example is from a list of numbers but letters can also be used
 	int userChoice;
 	cout << "=========================================================" << endl;
