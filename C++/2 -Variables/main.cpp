@@ -38,6 +38,7 @@ int main()
 	long double longDouble = 4.120; // Size = 8 byte = 64 bits. Usual Range: -1.7e-308 to 1.7e+308 (16 digits but may provide more precision) 
 
 	/// char data type: The value it can hold consists of single characters. Letters of the alphabet (uppercase/lowercase), Digits (0 to 9), and special symbols
+	// Useful header file for character testing <cctype>. Some functions (isalpha, isalnum, isdigit, islower, isupper, isspace, ispunct, isprint)
 	char charType = 'A'; // Size = 1 byte = 8 bits. Usual Range: -127 to 127 or 0 to 255
 	unsigned char unsignedCharType = 'b'; // Size = 1 byte = 8 bits. Usual Range: 0 to 255
 
