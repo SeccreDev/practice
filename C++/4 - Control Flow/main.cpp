@@ -146,6 +146,16 @@ int main()
 		cout << "This will execute as long as both of the values are true" << endl;
 	}
 	
+	// Conditional Operator - can be used to create a short if/else statements (condition? expresion1 : expresion2;)
+	int x = 0, y = 11, z = 0;
+
+	x < 0 ? y = 10 : z = 20;
+	cout << z << endl; // Will print out 20 as the previous statement changed the value of z
+	
+	// Conditional Expression - An expression that uses a conditional operator.
+	string oddOrEven = !(y % 2) ? "Odd" : "Even";
+	cout << y << " is " << oddOrEven << endl;
+
 	// Menu-Driven Program - the program is controlled by user selecting from a list of actions. In this example is from a list of numbers but letters can also be used
 	int userChoice;
 	cout << "=========================================================" << endl;
