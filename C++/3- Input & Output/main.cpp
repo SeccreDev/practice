@@ -130,6 +130,8 @@ int main()
 		cout << "Error - file could not be opened" << endl;
 	}
 
+	// Program can prompt user to enter the names of the input/output files.  inFile.open(userNamedFile.cstr());
+
 	// Closing the files by using close() member functions.
 	inFile.close();
 	outFile.close();

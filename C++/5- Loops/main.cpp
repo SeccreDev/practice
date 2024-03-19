@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 using namespace std;
 
 int main()
@@ -100,6 +101,49 @@ int main()
 	{
 		cout << "Sum: " << sum << endl;
 	}
-	
+
+	/// Sentinels - value in a list of values that indicates end of the list. Used to terminate input when user may not know how many values will be inputted
+	int total = 0, points;
+	cout << "Enter total points earned (or -1 to exit): ";
+	cin >> points;
+	while (points != -1) // The sentinel is the -1
+	{
+		total += points;
+		cout << "Enter points earned: ";
+		cin >> points;
+	}
+	cout << total << endl;
+
+	/// Nested loop - loop inside the body of another loop
+	for (int i = 1; i <= 10; i++)
+	{
+		for (int j = 1; j <= 10; j++)
+		{
+			cout << setw(3) << i * j << "  ";
+			//break; - Break can be used to terminate execution of a loop (not recommended), if done in a nested loop ~ inner loop it will only terminate the execution of the inner loop
+			//continue; - it skips all the statements to go to the end of the loop and prepare for the next repetition
+		}
+		cout << endl;
+	}
+
+	/// Retrieving data from files with loops
+	int scores, sum4 = 0;
+	ifstream inFile("scores.txt");
+
+	while (inFile >> scores) // stream extraction (>>) returns a true or false value if a read is successful or not
+	{
+		sum4 += scores;
+	}
+
+	cout << "Sum of Scores: " << scores << endl;
+
+	while (!inFile.eof()) // eof() returns true when it reaches the end of the file (when there is no more data to be read)
+	{
+		inFile >> scores;
+		sum4 += scores;
+	}
+
+	cout << "Sum of Scores: " << scores << endl;
+
 	return 0;
 }
