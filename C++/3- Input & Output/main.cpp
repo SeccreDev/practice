@@ -120,6 +120,16 @@ int main()
 	getline(inFile, members); // Reading a file and sending the data to members 
 	cout << members;
 
+	// File Open Errors
+	if (inFile)
+	{
+		cout << "This will be outputted because the file exists" << endl;
+	}
+	else
+	{
+		cout << "Error - file could not be opened" << endl;
+	}
+
 	// Closing the files by using close() member functions.
 	inFile.close();
 	outFile.close();
