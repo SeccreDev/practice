@@ -11,3 +11,7 @@ Random Number Generation :heavy_check_mark:
 
 Files - Input and Output :heavy_check_mark:
 
+Control Flow :heavy_check_mark:
+
+Loops :heavy_check_mark:
+
