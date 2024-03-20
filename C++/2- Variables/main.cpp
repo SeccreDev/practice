@@ -90,10 +90,15 @@ int main()
 	cout << 10 % 2 << endl; // Outputs 0
 	// cout << 10. % 2 << endl; // Throws an error
 
-	/*
-	* Multi-line comment
-	* gitgud
-	*/
+	/// Global variable - the variable defined outside all functions; it is accessible to all functions within its scope. Global variables are initialized to 0 or NULL when the variable is defined, these can be overridden with explicit initial values.
+	///					  global variables should be used sparingly because it makes the programs harder to understand and to debug
+	
+	/// Global constant - is a named constant that can be used by every function in a program. Useful if there are unchanging values that are used throught the program. Safer than normal global variables
 
-	return 0;
+	/// Local variable - the variable defined within a function or block; accessible only within the function or block. Other functions and blocks can define variables with the same name.
+	///                  local variables only exists while its defining function is executing, they are destroyed when the function terminates. It must be initialized by the programmer.
+	///                  local variables can have the same names as global variables, when a function contains a local variable that has the same name as a global variable, the global variable is unavailable in that function.
+	
+	/// static local variables - are defined and initialized only the first time the function is executed; they retain their values betweeen functions calls.
+
 }
