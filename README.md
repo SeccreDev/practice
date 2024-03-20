@@ -15,3 +15,4 @@ Control Flow :heavy_check_mark:
 
 Loops :heavy_check_mark:
 
+Functions :heavy_check_mark:
