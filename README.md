@@ -1,5 +1,6 @@
 # C++
 Variables & Data Types :heavy_check_mark:
+
 Local Variables & Global Variables :heavy_check_mark:
 
 Arithmetic Operators :heavy_check_mark:
