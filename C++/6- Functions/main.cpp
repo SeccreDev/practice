@@ -5,7 +5,7 @@ using namespace std;
 *  Function definition - consists of:
 *									 return type: data type of the value the function returns. if a function doesnt return a value it's data type is void.
 *									 name: name of the function
-*									 paramater list: the variables that hold the values that are passed to the function when it is called
+*									 paramater list: the variables that hold the values that are passed to the function when it is called. Parameters for functions are local variables
 *                                    body: statements that perform the function's task
 */
 void printHeading(string h1); // Function prototype - has 1 parameter in this case: string h1 (can have more than one); the data type has to be specified for each parameter
@@ -25,11 +25,17 @@ void getDimensions(int &d1, int &d2); // reference variable (&) - makes so the c
 //void getArea(double a, double b);
 
 /// Function template - pattern for creating definitions of functions that differ only in the type of data they manipulate. Better than overloaded functions as they only need to be defined once
+///                     when the compiler encounters a call to the function, it generates code to handle the specific data types used in the call
+///                     we can overload template function
 template<class T>
 T square(T side);
 
 template <class T>
 void swapValues(T& a, T& b);
+
+// Template with multiple types
+template<class T1, class T2, class T3>
+void backwards(T1 p1, T2 p2, T3 p3);
 
 
 int main() // this is the function header it consists of: int is the return type, main is the name, () is the paramater list (although here is empty)
@@ -55,6 +61,8 @@ int main() // this is the function header it consists of: int is the return type
 	swapValues(value1, value2); // value1 is 90, value2 is 20
 	cout << "Value1: " << value1 << endl; // now value1 is 20
 	cout << "Value2: " << value2 << endl; // now value2 is 90
+
+	backwards(1, 'A', "MAL");
 
 }
 
@@ -98,4 +106,10 @@ void swapValues(T &a, T &b)
 	T temp = a;
 	a = b;
 	b = temp;
+}
+
+template<class T1, class T2, class T3>
+void backwards(T1 p1, T2 p2, T3 p3)
+{
+	cout << p3 << p2 << p1;
 }
