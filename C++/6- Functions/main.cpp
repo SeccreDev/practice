@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib> // To import the exit() function
 using namespace std;
 
 /*
@@ -11,6 +12,9 @@ using namespace std;
 void printHeading(string h1); // Function prototype - has 1 parameter in this case: string h1 (can have more than one); the data type has to be specified for each parameter
 void displayName(string firstName, string lastName); // Function prototype - has 2 parameter in this case
 int sumOfNumbers(int a, int b);
+
+/// Recursive Functions - a function that calls itself. Useful in solving problems that can be broken down into simpler sub-problems of the same type. A base case should eventually be reached, then the recursion will stop.
+void startRace(int number);
 
 /// Default Arguments - values that are passed automatically if arguments are missing from a function call. The parameters without defaults must be declared first 
 int multiplyThreeNumbers(int firstNumber, int secondNumber = 1, int thirdNumber = 1);
@@ -46,8 +50,10 @@ int main() // this is the function header it consists of: int is the return type
 	// Pass by value - argument is passed to a function but the function cannot modified the original argument (the function has a copy of the value but not the original)
 	printHeading(heading); // 1 argument copied to the function (pass by value)
 	displayName(name, lName); // 2 arguments copied to the function (pass by value)
-	total = sumOfNumbers(number, number); // 
+	total = sumOfNumbers(number, number); 
 	cout << "Total: " << total << endl;
+	cout << "Race starts in: " << endl;
+	startRace(0); // recursive function
 	cout << "Multiply 3 numbers: " << multiplyThreeNumbers(5) << endl; // Two default arguments that are set to = 1. Result is 5 * 1 * 1
 	// Pass by reference - argument is passed to a function and the function can modified the original argument
 	getDimensions(height, width); // Pass by reference only works with variables, does not work with constants or expressions
@@ -64,6 +70,8 @@ int main() // this is the function header it consists of: int is the return type
 
 	backwards(1, 'A', "MAL");
 
+	exit(0); // Terminates the execution of a program. Can pass a value to OS to indicate status of program execution. 0 means successful completion, non-zero indicates a failure condition
+
 }
 
 void printHeading(string h1) // Function declaration
@@ -79,6 +87,19 @@ void displayName(string firstName, string lastName)
 int sumOfNumbers(int a, int b)
 {
 	return a + b; // returns a value and ends the execution of the function, can be placed anywhere. The return value must be of the same data type as the declared return type (if not it will try to be converted)
+}
+
+void startRace(int number)
+{
+	if (number == 10)
+	{
+		cout << "Start!" << endl;
+	}
+	else
+	{
+		cout << number << "... ";
+		startRace(number + 1); // Recursive function call
+	}
 }
 
 int multiplyThreeNumbers(int firstNumber, int secondNumber, int thirdNumber)
