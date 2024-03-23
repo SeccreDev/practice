@@ -11,11 +11,32 @@ struct Student // struct name often begins with an uppercase letter.
 	short year;
 	string name;
 	float gpa;
+
+	// Constructor - special function that can be a member of a structure, automatically invoked when a structure variable is created. Used to initialize data members.
+	Student(int SID, short Y, string N, float GPA = 0);
 };
+
+/*
+* Nested Structures
+  struct PersonInfo
+  {
+	string name, address, city;
+  };
+
+  struct Student
+  {
+	int studentID;
+	PersonInfo pData;
+	short year;
+	double gpa;
+  };
+*/
+
+void showData(const Student& s);
 
 int main()
 {
-	Student s1, s2;
+	/*Student s1, s2;
 	cout << "Input student id: ";
 	cin >> s1.studentID;
 	cin.ignore();
@@ -53,5 +74,39 @@ int main()
 	else
 	{
 		cout << "Second student has higher GPA\n";
-	}
+	}*/
+
+	// We can also initialize structure by using a constructor or a list
+	// Initializing structure with list
+	Student s3 = {404, 2012, "Andres", 2.40 + 1.20};
+
+	// Initializing data with a constructor
+	Student s4 = Student(1234, 2003, "Julio", 1.40 + 2.40);
+
+	// Passing a structure parameter
+	showData(s3); // Passing a structure by value is slow, passing by reference allows the function to modify the data in the structure but if we use a const it will deny it
+	showData(s4);
+
+	/* Members of nested structures
+	   Student s5;
+	   s5.pData.name = "Juan";
+	   s5.pData.city = "Madrid";
+	   s5.studentID = 102;
+	*/
+}
+
+Student::Student(int SID, short Y, string N, float GPA)
+{
+	studentID = SID;
+	year = Y;
+	name = N;
+	gpa = GPA;
+}
+
+void showData(const Student &s)
+{
+	cout << "Student name: " << s.name << endl;
+	cout << "Student id: " << s.studentID << endl;
+	cout << "Student gpa: " << fixed << setprecision(1) << s.gpa << endl;
+	cout << "Student year: " << s.year << endl;
 }
