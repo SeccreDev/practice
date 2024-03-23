@@ -19,4 +19,6 @@ Loops :heavy_check_mark:
 
 Functions :heavy_check_mark:
 
+Structures :heavy_check_mark:
+
 Classes
