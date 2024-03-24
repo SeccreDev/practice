@@ -13,7 +13,7 @@ struct Student // struct name often begins with an uppercase letter.
 	float gpa;
 
 	// Constructor - special function that can be a member of a structure, automatically invoked when a structure variable is created. Used to initialize data members.
-	Student(int SID, short Y, string N, float GPA = 0);
+	Student(int SID = 0, short Y = 0, string N = "0", float GPA = 0);
 };
 
 /*
@@ -32,7 +32,11 @@ struct Student // struct name often begins with an uppercase letter.
   };
 */
 
+// A function that takes Student as a parameter
 void showData(const Student& s);
+
+// Returning a structure from a function
+Student getStudentData();
 
 int main()
 {
@@ -93,6 +97,10 @@ int main()
 	   s5.pData.city = "Madrid";
 	   s5.studentID = 102;
 	*/
+
+	// Calling Student getStudentData();
+	Student s5 = getStudentData();
+	showData(s5);
 }
 
 Student::Student(int SID, short Y, string N, float GPA)
@@ -109,4 +117,19 @@ void showData(const Student &s)
 	cout << "Student id: " << s.studentID << endl;
 	cout << "Student gpa: " << fixed << setprecision(1) << s.gpa << endl;
 	cout << "Student year: " << s.year << endl;
+}
+
+Student getStudentData()
+{
+	Student s1;
+	cout << "Input studentID: ";
+	cin >> s1.studentID;
+	cout << "Input year: ";
+	cin >> s1.year;
+	cin.ignore();
+	cout << "Input student name: ";
+	getline(cin, s1.name);
+	cout << "Input student gpa: ";
+	cin >> s1.gpa;
+	return s1;
 }
