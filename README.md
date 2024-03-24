@@ -11,7 +11,7 @@ Character & String input | Format output with stream manipulators :heavy_check_m
 
 Random Number Generation :heavy_check_mark:
 
-Files - Input and Output :heavy_check_mark:
+Files - Input & Output :heavy_check_mark:
 
 Control Flow :heavy_check_mark:
 
@@ -21,4 +21,4 @@ Functions :heavy_check_mark:
 
 Structures :heavy_check_mark:
 
-Classes
+Classes & Objects :heavy_check_mark:
