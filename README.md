@@ -25,4 +25,6 @@ Unions :heavy_check_mark:
 
 Classes & Objects :heavy_check_mark:
 
-Creating an executable program
+Creating an Executable Program
+
+Enumerated Data Type 
