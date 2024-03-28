@@ -1,4 +1,7 @@
 #include <iostream>
+/// Guards - to prevent header file from being included twice
+#ifndef DATE_H
+#define DATE_H
 using namespace std;
 
 /// OOP - based on objects that encapsulate the data and functions that work on them
@@ -12,12 +15,12 @@ class Date
     *                   public: can be accessed by functions outside of the class.
     
     */
-    // Attributes/Member variables are usually private
+    // Attributes/Member variables are usually private. A private member function can only be called by another private function of the same class
     private:
         int day; 
         int month;
         int year;
-
+    
     // Setters and getters functions are usually public
     public:
 
@@ -79,3 +82,5 @@ class Date
 
         }
 };
+
+#endif
