@@ -32,6 +32,7 @@ int main()
 	// Returning object from a function
 	Date activity3 = initializeDate();
 	showData3(activity3);
+	cin.get();
 
 }
 
