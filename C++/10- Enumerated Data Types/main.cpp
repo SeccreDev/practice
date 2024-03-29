@@ -37,5 +37,17 @@ int main()
 		cout << tree4 << endl;
 	}
 
+	// Enumerated values cannot be reused in different enumerated data types that are in the same scope. A strongly typed enum (called enum class) allows you to do this
+	enum class Street { RUSH, OAK, STATE };
+
+	// Enumeratos can be used in multiple enumerated data types, references must include the name of the strongly typed enum followed by ::
+	Street street = Street::OAK;
+
+	// Strongly typed enumerators are stored as ints by default, to choose a different integer data type, it must be indicated after the enum name and before the enumarator list:
+	enum class Flower : char {DAISY, ORCHID};
+
+	// To retrieve the integer value associated with a strongly-typed enumerator, cast it to an int
+	int value = static_cast<int>(Flower::ORCHID);
+
 	return 0;
 }
