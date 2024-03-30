@@ -28,3 +28,5 @@ Classes & Objects :heavy_check_mark:
 Creating an Executable Program :heavy_check_mark:
 
 Enumerated Data Type :heavy_check_mark:
+
+Arrays
