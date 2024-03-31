@@ -57,7 +57,34 @@ int main()
 
 	// Partial Array Initialization
 	int numbers2[SIZE] = { 0, 20, 40 }; // Array is initialized with fewer values than the size declarator, remaining elements will be set to 0 or empty string
-	cout << numbers2[3]; // Outputs 0
+	cout << numbers2[3] << endl; // Outputs 0
+
+	// Implicit Array Sizing - determines array size by the size of the initialization list
+	int numbers3[] = {23, 21, 24, 52, 612, 2, 4, 5, 1, 10};
+
+	// Incrementing & Decrementing array elements
+	//numbers3[i]++ // Adds 1 to numbers3[i]
+	//numbers3[i++] // Uses i then icrements it, has no effect on the element
+	//numbers3[++i] // Increments i then uses it, has no effect on the element
+
+	// Copying one array to another
+	for (int index = 0; index < SIZE; index++)
+	{
+		numbers3[index] = numbers[index]; // Copies the numbers[] array to numbers3
+	}
+
+	// Comparing arrays
+	bool isEqual = true;
+	int index = 0;
+	while (isEqual && (index < SIZE))
+	{
+		if (numbers[index] != numbers3[index])
+		{
+			isEqual = false;
+		}
+		index++;
+	}
+	cout << "Is it equal: " << isEqual; // Outputs 1 (which is true)
 
 
 	return 0;
