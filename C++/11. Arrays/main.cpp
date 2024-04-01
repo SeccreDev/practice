@@ -84,7 +84,16 @@ int main()
 		}
 		index++;
 	}
-	cout << "Is it equal: " << isEqual; // Outputs 1 (which is true)
+	cout << "Is it equal: " << isEqual << endl; // Outputs 1 (which is true)
+
+	// Finding average
+	double average, sum = 0;
+	for (int i = 0; i < SIZE; i++)
+	{
+		sum += numbers[i];
+	}
+	average = sum / SIZE;
+	cout << "Average of 1 to 10: " << average << endl; // Outputs 5.5
 
 
 	return 0;
