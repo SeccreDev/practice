@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 using namespace std;
 
 int main()
@@ -95,6 +96,23 @@ int main()
 	average = sum / SIZE;
 	cout << "Average of 1 to 10: " << average << endl; // Outputs 5.5
 
+	// Finding largest array element
+	int largest = numbers[0], element = 0;
+	for (int i = 0; i < SIZE; i++)
+	{
+		if (numbers[i] > largest)
+		{
+			largest = numbers[i];
+			element = i;
+		}
+	}
+	cout << "Highest score is " << largest << " which is in numbers[" << element << "]\n";
+
+	// Strings and arrays
+	string city = "Maria ";
+	cout << city[0] << endl; // Outputs the first character
+	cout << city[5] << endl; // Outputs an empty space
+	cout << city[1] << endl; // Outputs the second character
 
 	return 0;
 }
