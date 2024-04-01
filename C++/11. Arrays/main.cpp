@@ -114,5 +114,30 @@ int main()
 	cout << city[5] << endl; // Outputs an empty space
 	cout << city[1] << endl; // Outputs the second character
 
+	// Parallel Array - using multiple arrays to "connect" data (it's not actually connected just related thanks to the index)
+	string name[3];
+	double avg[3];
+	char grade[3];
+
+	for (int i = 0; i < 3; i++)
+	{
+		cout << "Input name: ";
+		cin >> name[i];
+		cout << "Input average: ";
+		cin >> avg[i];
+		cout << "Input grade: ";
+		cin >> grade[i];
+	}
+
+	for (int i = 0; i < 3; i++)
+	{
+		cout << "Student: " << name[i]
+			 << "  Average: " << avg[i]
+			 << "  Grade: " << grade[i] << endl;
+	}
+
+	
+
+
 	return 0;
 }
