@@ -29,9 +29,9 @@ Creating an Executable Program :heavy_check_mark:
 
 Enumerated Data Type :heavy_check_mark:
 
-Arrays
+Arrays & typedef :heavy_check_mark:
 
-2D Arrays
+2D Arrays & More
 
 Vectors
 

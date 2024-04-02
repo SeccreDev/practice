@@ -6,7 +6,11 @@ using namespace std;
 
 // Function prototype
 void displayValue(int number);
-void displayValues(int numbers[], int arraySize);
+void displayValues(const int numbers[], int arraySize);
+
+// typedef with a passed array
+typedef int intArray[];
+void displayValuesTdef(const intArray tests, int arraySize);
 
 int main()
 {
@@ -141,12 +145,12 @@ int main()
 			 << "  Grade: " << grade[i] << endl;
 	}
 
-	// typedef - creates an alias for a simple or structured data type (typedef existingType newName). It is used to make the code more readable
+	/// typedef - creates an alias for a simple or structured data type (typedef existingType newName). It is used to make the code more readable
 	//typedef unsigned int Uint;
 	//Uint tests23[SIZE]; // Array of unsigned ints that can have 10 elements
 
-	typedef unsigned int Uint[SIZE];
-	Uint tests24; // Array of unsigned ints that can have 10 elements
+	typedef int Uint[SIZE];
+	Uint tests24 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}; // Array of ints that can have 10 elements
 
 	typedef int yearArray[12];
 	yearArray lowTemp, highTemp; // Array of int that can have 12 elements
@@ -154,10 +158,11 @@ int main()
 	// Array element as function arguments
 	displayValue(numbers[0]);
 
-	// Entire arrays as function arguments
+	// Entire arrays as function arguments. Changes made to array elements in a function are made to the actual array in the calling function (works like pass by reference). We can use const keyword to prevent changes to the array
 	displayValues(numbers, SIZE);
 
-
+	// Using typedef variable with a passed array
+	displayValuesTdef(tests24, SIZE);
 
 	return 0;
 }
@@ -167,10 +172,18 @@ void displayValue(int number)
 	cout << number << endl;
 }
 
-void displayValues(int numbers[], int arraySize)
+void displayValues(const int numbers[], int arraySize)
 {
 	for (int i = 0; i < arraySize; i++)
 	{
 		cout << "Number: " << numbers[i] << endl;
+	}
+}
+
+void displayValuesTdef(const intArray tests, int arraySize)
+{
+	for (int i = 0; i < arraySize; i++)
+	{
+		cout << "Number: " << tests[i] << endl;
 	}
 }
