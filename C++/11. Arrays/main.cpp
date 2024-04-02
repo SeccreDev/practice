@@ -3,6 +3,11 @@
 #include <string>
 using namespace std;
 
+
+// Function prototype
+void displayValue(int number);
+void displayValues(int numbers[], int arraySize);
+
 int main()
 {
 	/// Array - variable that can store multiple values of the same type. Values are stored in consecutive memory locations
@@ -146,9 +151,26 @@ int main()
 	typedef int yearArray[12];
 	yearArray lowTemp, highTemp; // Array of int that can have 12 elements
 
-	
+	// Array element as function arguments
+	displayValue(numbers[0]);
+
+	// Entire arrays as function arguments
+	displayValues(numbers, SIZE);
 
 
 
 	return 0;
+}
+
+void displayValue(int number)
+{
+	cout << number << endl;
+}
+
+void displayValues(int numbers[], int arraySize)
+{
+	for (int i = 0; i < arraySize; i++)
+	{
+		cout << "Number: " << numbers[i] << endl;
+	}
 }
