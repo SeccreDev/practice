@@ -136,7 +136,18 @@ int main()
 			 << "  Grade: " << grade[i] << endl;
 	}
 
+	// typedef - creates an alias for a simple or structured data type (typedef existingType newName). It is used to make the code more readable
+	//typedef unsigned int Uint;
+	//Uint tests23[SIZE]; // Array of unsigned ints that can have 10 elements
+
+	typedef unsigned int Uint[SIZE];
+	Uint tests24; // Array of unsigned ints that can have 10 elements
+
+	typedef int yearArray[12];
+	yearArray lowTemp, highTemp; // Array of int that can have 12 elements
+
 	
+
 
 
 	return 0;
