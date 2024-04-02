@@ -31,7 +31,7 @@ Enumerated Data Type :heavy_check_mark:
 
 Arrays & typedef :heavy_check_mark:
 
-2D Arrays & More
+Multidimensional Arrays
 
 Vectors
 
