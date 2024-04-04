@@ -33,6 +33,6 @@ Arrays & typedef :heavy_check_mark:
 
 Multidimensional Arrays :heavy_check_mark:
 
-Vectors
+Vectors :heavy_check_mark:
 
 Algorithms
