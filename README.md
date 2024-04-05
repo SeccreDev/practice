@@ -37,4 +37,4 @@ Vectors :heavy_check_mark:
 
 Algorithms
 
-Array of Objects & Structures
+Array of Objects & Structures :heavy_check_mark:
