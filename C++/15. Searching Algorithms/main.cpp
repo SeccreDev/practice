@@ -2,6 +2,8 @@
 #include <vector>
 using namespace std;
 
+int binarySearch(int array[], int lowest, int highest, int desiredValue);
+
 int main()
 {
 	// Search - locate a specific item in a list (array, vector, linked list, ...) of data
@@ -40,6 +42,43 @@ int main()
 
 	// Binary Search - Algorithm that searches for a value by dividing a sorted array into three sections: middle element, left side of middle element, and right side of middle element.
 	//                 Analyzes if the middle element is the desired value, if not it uses only one half of the array (left or right depending if the desired value is lower or higher) and
-	//                 divides that side into three sections and repeats all the process again until the desired value is found or no more elements to examine
+	//                 divides that side into three sections and repeats all the process again until the desired value is found or no more elements to examine.
+	//                 Binary search is more efficient than linear search as it performs at most log2Size comparisions; it only requires the array to be sorted.
+	int numbers2[SIZE] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+	int desiredValue = 10;
+	int lowestValue = 0, highestValue = SIZE - 1, numberFound;
 
+	numberFound = binarySearch(numbers2, lowestValue, highestValue, desiredValue);
+	if (numberFound == -1)
+	{
+		cout << "The number is not on the list...\n";
+	}
+	else
+	{
+		cout << "The desired value was found on index: " << numberFound << endl;
+	}
+}
+
+int binarySearch(int array[], int lowest, int highest, int desiredValue)
+{
+
+	while (lowest <= highest)
+	{
+		int middleValue = (lowest + highest) / 2;
+		if (array[middleValue] == desiredValue)
+		{
+			cout << "The number you are looking for is found! \n";
+			return middleValue;
+		}
+		else if (array[middleValue] < desiredValue)
+		{
+			lowest = middleValue + 1;
+		}
+		else
+		{
+			highest = middleValue - 1;
+		}
+	}
+
+	return -1;
 }
