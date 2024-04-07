@@ -38,3 +38,5 @@ Vectors :heavy_check_mark:
 Array of Objects & Structures :heavy_check_mark:
 
 Searching Algorithms :heavy_check_mark:
+
+Sorting Algorithms :heavy_check_mark:
