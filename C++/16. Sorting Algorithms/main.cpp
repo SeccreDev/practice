@@ -20,10 +20,10 @@ int main()
 void bubbleSort(int array[], int size)
 {
 	bool wasSwapped = false;
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < size - 1; i++)
 	{
 		wasSwapped = false;
-		for (int j = 0 ; j < size; j++)
+		for (int j = 0 ; j < size - 1 - i; j++)
 		{
 			if (array[j] > array[j + 1])
 			{
@@ -43,7 +43,6 @@ void displayArray(int array[], int size)
 	cout << "Sorted array elements: ";
 	for (int i = 0; i < size; i++)
 	{
-		cout << array[i];
+		cout << " " << array[i] << " ";
 	}
 }
-
