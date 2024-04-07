@@ -18,9 +18,14 @@ int main()
 
 	// Selection Sort - It locate the smallest element in the array and exchange it with the element in position 0. Then locates the next smallest element and exchanges it with the
 	//                  element in position 1. It continues to do this until all elements are in order.
+	//                  Selection Sort is more efficient than Bubble Sort but is considered harder to understand and implement
 	int numbers2[SIZE] = { 9, 3, 2, 1, 76, 2, 1, 8, 19, 0 };
 	selectionSort(numbers2, SIZE);
 	displayArray(numbers2, SIZE);
+
+	// Sorting an Array of Objects - The key field determines how the object will be ordered, when exchanging the contents of array elements entire objects must be exchanged,
+	//								 not just the key fields in the object
+
 	return 0;
 }
 
