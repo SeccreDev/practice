@@ -57,6 +57,10 @@ int main()
 	{
 		cout << "The desired value was found on index: " << numberFound << endl;
 	}
+
+	// Searching an Array of Objects - When searching an array of objects the value being searched for is a member of an object, not the entire object. Not limited to arrays of integers.
+
+	return 0;
 }
 
 int binarySearch(int array[], int lowest, int highest, int desiredValue)
