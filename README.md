@@ -41,4 +41,6 @@ Searching Algorithms :heavy_check_mark:
 
 Sorting Algorithms :heavy_check_mark:
 
-Pointers
+Pointers :heavy_check_mark:
+
+
