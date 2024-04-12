@@ -5,6 +5,10 @@ void getNumber(int *intPointer);
 void swapValues(int *a, int *b);
 void swapAddresses(int *&a, int *&b);
 
+// Pointers can be the return type of a function - function must not return a pointer to a local variable in the function; should only return a pointer to data
+//                                                 that was  passed to the function as an argument or to dynamically allocate memory inside the function
+int *newArray(int *&s);
+
 int main()
 {
 	// Pointers - each variable in a program uses a unique location in memory that has an address. The address operator & is used to access the address of a variable:
@@ -107,6 +111,64 @@ int main()
 	cout << "Number2: " << number2 << endl;
 	cout << "intPointer1: " << intPointer1 << " << pointing to number2 now: " << *intPointer1 << endl;
 	cout << "intPointer2: " << intPointer2 << " << pointing to number1 now: " << *intPointer2 << endl;
+	cout << "===============================================" << endl;
+
+	// Pointers to Constants - The value stored in the location where the pointer is pointing is a constant. The value cannot be change after its initialized
+	const float dollars[] = {100.55, 200.50};
+	const float *pointerDollar = dollars; // Can be read as: pointerDollar is a pointer to a constant that is a float
+		// *pointerDollar = 20; // Won't compile
+
+	// Constant Pointer - The address in the pointer cannot change after the pointer is initialized
+	int maxNumber = 20;
+	int *const pointerMaxNumber = &maxNumber; // Can be read as: pointerMaxNumber is a constant pointer to an integer
+	*pointerMaxNumber = 80; // The value at the address can change
+		//pointerMaxNumber = &a;// The address in the pointer cannot change.
+	cout << *pointerMaxNumber << endl;
+	cout << "===============================================" << endl;
+
+	// Constant Pointer to Constant - The value stored in the location where the pointer is pointing is constant and the addres in the pointer cannot be change
+	const int size = 39;
+	const int *const pointerToSize = &size; // Can be read as: pointerToSize is a constant pointer to a constant integer
+		//pointerToSize = &a;   // The address in the pointer cannot change
+		//*pointerToSize = 23;  // The value at the address cannot change
+
+	// Dynamic Memory Allocation - allocating storage for a variable while the program is running
+	int *arraySize = new int; // new operator allocates memory dynamically and returns the address of the location
+	cout << "Enter array desired size: ";
+	cin >> *arraySize;
+	int *dynamicArray = new int[*arraySize];
+
+	for (int i = 0; i < *arraySize; i++)
+	{
+		cout << "Enter score " << i+1 << ": ";
+		cin >> dynamicArray[i];
+	}
+	for (int i = 0; i < *arraySize; i++)
+	{
+		cout << "Score " << i + 1 << ": " << dynamicArray[i] << endl;
+	}
+
+	// Releasing Dynamic Memory - keyword 'delete' to free dynamic memory, 'delete []' for arrays
+	cout << "Deleating dynamic memory...\n";
+	delete arraySize;
+	delete [] dynamicArray;
+
+	// Returning Pointers from functions
+	int* arraySize2 = new int; // new operator allocates memory dynamically and returns the address of the location
+	cout << "Enter array desired size: ";
+	cin >> *arraySize2;
+	int* array1 = newArray(arraySize2);
+	for (int i = 0; i < *arraySize2; i++)
+	{
+		cout << "Enter score " << i + 1 << ": ";
+		cin >> array1[i];
+	}
+	for (int i = 0; i < *arraySize2; i++)
+	{
+		cout << "Score " << i + 1 << ": " << array1[i] << endl;
+	}
+	delete arraySize2;
+	delete [] array1;
 	return 0;
 }
 
@@ -128,4 +190,10 @@ void swapAddresses(int *&a, int *&b)
 	int *temp = a;
 	a = b;
 	b = temp;
+}
+
+int *newArray(int *&s)
+{
+	int *dynamicArray = new int[*s];
+	return dynamicArray;
 }
