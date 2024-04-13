@@ -43,7 +43,7 @@ Sorting Algorithms :heavy_check_mark:
 
 Pointers :heavy_check_mark:
 
-Pointers and Objects/Structures
+Pointers and Objects/Structures :heavy_check_mark:
 
 Classes Shenanigans
 
