@@ -47,4 +47,9 @@ Pointers and Objects/Structures :heavy_check_mark:
 
 Classes Shenanigans
 
+Strings Shenanigans
+
+Class Templates
+
+Linked lists
 
