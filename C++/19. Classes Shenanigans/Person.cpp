@@ -1,34 +1,9 @@
 #include "Person.h"
+
+// Static Member Variable must be initialized outside of the class declaration
 int Person::personCount = 0; // Static Member Variable initialized to 0
-// this Pointer - can be used to access members that may be hidden by parameters with the same name
-Person::Person(string name = "", int age = 0)
+
+void Person::incrementPersonCount() // The definition of a static function is not preceded by the keyword static, but the prototype is.
 {
-	this->name = name; // using ->
-	(*this).age = age; // using * and . operators
 	personCount++;
-}
-
-void Person::setName(const string n)
-{
-	name = n;
-}
-
-void Person::setAge(const int a)
-{
-	age = a;
-}
-
-int Person::getPersonCount()
-{
-	return personCount;
-}
-
-int Person::getAge() const
-{
-	return age;
-}
-
-string Person::getName() const
-{
-	return name;
 }
