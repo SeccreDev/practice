@@ -36,3 +36,23 @@ void Person::incrementPersonCount() // The definition of a static function is no
 {
 	personCount++;
 }
+
+// Friend Function - definition
+void setMembers(Person &p, int age, string name) // & to pass by reference and modify it
+{
+	p.age = age;
+	p.name = name;
+}
+
+// Friend Function - another class
+void Person::setAnimal(Animal &d, int age, string name)
+{
+	d.setAnimalAge(age);
+	d.setAnimalName(name);
+}
+
+void Person::printAnimal(Animal d)
+{
+	cout << "Animal Age: " << d.getAnimalAge() << endl;
+	cout << "Animal Name: " << d.getAnimalName() << endl;
+}
