@@ -16,17 +16,44 @@ class Person
 
 	public:
 		/// Constructor
-		Person(string name = "", int age = 0);
+		// this Pointer - can be used to access members that may be hidden by parameters with the same name
+		Person(string name = "", int age = 0)
+		{
+			this->name = name; // using ->
+			(*this).age = age; // using * and . operators
+			personCount++;
+		}
 
 		/// Setters
 		// Constant Parameter  - when const is in parameter list the function is prevented from modifying the parameter 'n'. The parameter is read-only
-		void setAge(const int a);
-		void setName(const string n);
+		void setAge(const int a)
+		{
+			age = a;
+		}
+
+		void setName(const string n)
+		{
+			name = n;
+		}
 
 		// Getters
 		// Constant Member Functions - the function is prevented from modifying the object. None of the objects data members can be modified. Recommended for all getters
-		static int getPersonCount();
-		int getAge() const;
-		string getName() const;
+		int getAge() const
+		{
+			return age;
+		}
+
+		string getName() const
+		{
+			return name;
+		}
+
+		// Static Member Functions - declared by prefixing the prototype with the keyword static before the function return data type
+		static int getPersonCount()
+		{
+			return personCount;
+		}
+
+		static void incrementPersonCount();
 };
 #endif
