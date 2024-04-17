@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "Animal.h"
 #ifndef PERSON_H
 #define PERSON_H
 using namespace std;
@@ -13,6 +14,7 @@ class Person
 		static int personCount; // Static Member Variable must be declared in class with the keyword static
 		int age;
 		string name;
+
 
 	public:
 		/// Constructor
@@ -37,5 +39,15 @@ class Person
 		// Static Member Functions - declared by prefixing the prototype with the keyword static before the function return data type
 		static int getPersonCount();
 		static void incrementPersonCount();
+
+		// Friend function - a function that is not a member of a class, but has access to private members of the class. Declared by prefixing the prototype
+		//                   with the keyword friend before the functions data return type. A friend function can be a stand-alone or a member function of another
+		//                   class, in either case, the functions definition will not be preceded by the keyword friend. Friend functions is recommnended for functions
+		//                   that must have access to private members
+		friend void setMembers(Person &p, int age, string name);// Stand-alone Friend Function
+
+		// Using Animal class
+		void setAnimal(Animal &d, int age, string name);
+		void printAnimal(Animal d);
 };
 #endif
