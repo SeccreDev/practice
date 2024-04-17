@@ -9,7 +9,10 @@ int main()
 	Person p1, p2;
 	cout << p1.getPersonCount() << endl;
 	cout << p2.getPersonCount() << endl;
-	cout << Person::getPersonCount();
+	cout << Person::getPersonCount() << endl;
+	Person::incrementPersonCount();
+	cout << Person::getPersonCount() << endl;
 
 	return 0;
 }
+

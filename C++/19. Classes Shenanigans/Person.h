@@ -25,35 +25,17 @@ class Person
 		}
 
 		/// Setters
-		// Constant Parameter  - when const is in parameter list the function is prevented from modifying the parameter 'n'. The parameter is read-only
-		void setAge(const int a)
-		{
-			age = a;
-		}
-
-		void setName(const string n)
-		{
-			name = n;
-		}
+		// Constant Parameter  - when const is in parameter list the function is prevented from modifying the parameter. The parameter is read-only
+		void setAge(const int a);
+		void setName(const string n);
 
 		// Getters
 		// Constant Member Functions - the function is prevented from modifying the object. None of the objects data members can be modified. Recommended for all getters
-		int getAge() const
-		{
-			return age;
-		}
-
-		string getName() const
-		{
-			return name;
-		}
-
+		int getAge() const;
+		string getName() const;
+		
 		// Static Member Functions - declared by prefixing the prototype with the keyword static before the function return data type
-		static int getPersonCount()
-		{
-			return personCount;
-		}
-
+		static int getPersonCount();
 		static void incrementPersonCount();
 };
 #endif
