@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Person.h"
+#include "Copy.h"
 //#include "Animal.h"
 using namespace std;
 
@@ -35,7 +36,7 @@ int main()
 
 	// Member-wise Assignment - can use = to assign one object to another, or to initialize an object with another object's data thanks to the copy constructor
 	Person ama("Ama Lee", 20), ama2;
-	ama2 = ama; // Assigning object ama to ama2. ama2 will copy ama values. Default Copy constructor called
+	ama2 = ama; // Assigning object ama to ama2. ama2 will copy ama values. Default Copy Constructor called
 	cout << "ama: " << ama.getAge() << " " << ama.getName() << endl;
 	cout << "ama2: " << ama2.getAge() << " " << ama2.getName() << endl;
 	ama2.setName("Ama Long");
@@ -44,7 +45,7 @@ int main()
 	cout << "ama2: " << ama2.getAge() << " " << ama2.getName() << endl;
 	cout << "===========================================\n";
 
-	Person ama3 = ama2; // Initializing ama3 with the data of ama2. Default Copy constructor called
+	Person ama3 = ama2; // Initializing ama3 with the data of ama2. Default Copy Constructor called
 	cout << "ama2: " << ama2.getAge() << " " << ama2.getName() << endl;
 	cout << "ama3: " << ama3.getAge() << " " << ama3.getName() << endl;
 	ama3.setName("Ama Three");
@@ -53,9 +54,14 @@ int main()
 	cout << "ama3: " << ama3.getAge() << " " << ama3.getName() << endl;
 	cout << "===========================================\n";
 
-
-
-
+	// Copy Constructor - a special constructor used when a newly created object is initialized to the data of another object of the same class.
+	//                    If the programmer does not define a copy constructor for the class then the compiler calls a default copy constructor which copies corresponding
+	//					  data from one object to another of the same class. Default copy constructor copies field-to-field values, using member-wise assignment.
+	BadCopy c1(5.5);
+	BadCopy c2 = c1; // Default Copy Constructor called. Default Copy Constructor will share the same dynamic storage and cause an error. The destructor of one object deletes memory still in use by the other object. 
+	
+	// When some of our data members are pointers, its recommended that we always write our own copy constructor
+	GoodCopy c3;
 
 	return 0;
 }
