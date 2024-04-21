@@ -47,6 +47,8 @@ Pointers and Objects/Structures :heavy_check_mark:
 
 Classes Shenanigans
 
+Operator Overloading
+
 Strings Shenanigans
 
 Recursion
