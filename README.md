@@ -45,7 +45,7 @@ Pointers :heavy_check_mark:
 
 Pointers and Objects/Structures :heavy_check_mark:
 
-Classes Shenanigans
+Classes Shenanigans :heavy_check_mark:
 
 Operator Overloading
 
