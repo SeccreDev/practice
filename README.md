@@ -55,5 +55,5 @@ Recursion
 
 Class Templates
 
-Linked lists
+Linked Lists
 
