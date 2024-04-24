@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Person.h"
 #include "Copy.h"
+#include "Number.h"
 //#include "Animal.h"
 using namespace std;
 
@@ -61,11 +62,40 @@ int main()
 	//					  Copy constructor is automatically called when: object is initialized using an object of the same class, an object is passed by value to a function, and when
 	//                    an object is returned using a return statement from a function
 	BadCopy c1(5.5);
-	BadCopy c2 = c1; // Default Copy Constructor called. Default Copy Constructor will share the same dynamic storage and cause an error. The destructor of one object deletes memory still in use by the other object. 
+	//BadCopy c2 = c1; // Default Copy Constructor called. Default Copy Constructor will share the same dynamic storage and cause an error. The destructor of one object deletes memory still in use by the other object. 
 	
 	// When some of our data members are pointers, its recommended that we always write our own copy constructor
 	GoodCopy c3(6.5);
 	GoodCopy c4 = c3; // Programmer-Defined Copy Constructor called. Won't cause an error
+
+
+	// Overloaded Operators - It can change the entire meaning of an operator. Overloaded relational operators should return a bool value.
+	//                        Cannot overload these operators: ?: . .* sizeof 
+	
+	// Operator Overloading +
+	Number number1(2), number2(0);
+	//Number number3 = number1 - number3; // Without the overload operator for - this will result in an error
+	Number number3 = number1 + number2; // With the operator overloading the two objects will successfully add the specified members. number1 is the calling object that is passed to the this pointer and b is passed to parameter num
+	cout << number3.getNumber() << endl; // outputs the sum of number1 and number2
+	cout << "===========================================\n";
+
+	// Operator Overloading ==
+	if (number1 == number3)
+	{
+		cout << "number1 == number2" << endl;
+	}
+	else
+	{
+		cout << "number1 != number2" << endl;
+	}
+	cout << "===========================================\n";
+
+	// Operator Overloading =
+	Number2 numbcopy(2), numbcopy2(48);
+	numbcopy = numbcopy2; // Calls the operator=
+	numbcopy.operator=(numbcopy2); // Also calls the operator=
+	cout << numbcopy.getInt() << endl;
+	cout << "===========================================\n";
 
 	return 0;
 }
