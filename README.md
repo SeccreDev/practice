@@ -47,7 +47,7 @@ Pointers and Objects/Structures :heavy_check_mark:
 
 Classes Shenanigans :heavy_check_mark:
 
-Operator Overloading
+Operator Overloading :heavy_check_mark:
 
 Strings Shenanigans
 
