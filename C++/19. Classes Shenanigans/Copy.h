@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #ifndef COPY_H
 #define COPY_H
 using namespace std;
@@ -11,7 +10,7 @@ class BadCopy
 		float *floatPointer;
 
 	public:
-		BadCopy(int x = 0)
+		BadCopy(float x = 0)
 		{
 			floatPointer = new float;
 			*floatPointer = x; // Problem occur when object contain pointers to dynamic storage
@@ -42,6 +41,7 @@ public:
 		floatPointer = new float;
 		*floatPointer = *obj.floatPointer;
 	}
+
 	GoodCopy(float x = 0)
 	{
 		floatPointer = new float;
@@ -55,4 +55,3 @@ public:
 
 };
 #endif
-
