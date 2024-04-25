@@ -2,6 +2,7 @@
 #include "Person.h"
 #include "Copy.h"
 #include "Number.h"
+#include "IntValue.h"
 //#include "Animal.h"
 using namespace std;
 
@@ -96,6 +97,18 @@ int main()
 	numbcopy.operator=(numbcopy2); // Also calls the operator=
 	cout << numbcopy.getInt() << endl;
 	cout << "===========================================\n";
+
+	// Default Class Operations - C++ generates default constructor, copy constructor, copy assignment operator, move constructor, and destructor
+	//							  If you provide an implementation of any of these functions, you should provide an implementation for all of them.
+
+	// Conversion Operator
+	IntValue valor(100);
+	int rValue;
+	rValue = valor; // will assign object value to rValue
+	cout << rValue << endl; // Outputs rValue
+	cout << "===========================================\n";
+
+	// Object Composition
 
 	return 0;
 }
