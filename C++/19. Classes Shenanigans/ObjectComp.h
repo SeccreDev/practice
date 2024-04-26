@@ -39,6 +39,8 @@ class Book
 	public:
 		// Member Initialization List - Used in constructors for classes involved in aggregation. Allows constructor for enclosing class to pass arguments to
 		//                              the constructor of the enclosed class. Can be used to simplify the coding of constructors.
+		// Aggregation Relationship through pointers (not implemented here) - is represented as an object of one class containing pointers to objects of another class. The contained objects are said to 
+		//                           be part of the containing object, but they can exist independently of the containing object.
 		Book(int p, float l, float w): size(l, w)
 		{
 			this->pages = p;
