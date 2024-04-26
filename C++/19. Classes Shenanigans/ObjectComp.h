@@ -10,7 +10,7 @@ class Rectangle
 		float width;
 
 	public:
-		Rectangle(int l = 0, int w = 0)
+		Rectangle(float l = 0, float w = 0)
 		{
 			length = l;
 			width = w;
@@ -33,9 +33,18 @@ class Book
 {
 	private:
 		int pages;
-		Rectangle size; // Book is a composed object
+		// Class aggregation - object of one class owns an object of another class
+		Rectangle size; // Book is a composed object.
 
 	public:
+		// Member Initialization List - Used in constructors for classes involved in aggregation. Allows constructor for enclosing class to pass arguments to
+		//                              the constructor of the enclosed class. Can be used to simplify the coding of constructors.
+		Book(int p, float l, float w): size(l, w)
+		{
+			this->pages = p;
+			
+		}
+
 		void setPages(int p)
 		{
 			pages = p;
