@@ -3,6 +3,7 @@
 #include "Copy.h"
 #include "Number.h"
 #include "IntValue.h"
+#include "ObjectComp.h"
 //#include "Animal.h"
 using namespace std;
 
@@ -109,7 +110,10 @@ int main()
 	cout << "===========================================\n";
 
 	// Object Composition
+	Book book1(357, 10.20, 20.40);
+	cout << book1.totalCost() << endl;
 
+	
 	return 0;
 }
 
