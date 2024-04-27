@@ -34,7 +34,8 @@ class Parent
 		}
 };
 
-// The child class inherits the data members and the member functions of the parent class. These inheritance can be private, public, and protected.
+// The child class inherits the data members and the member functions of the parent class; Parent class constructor executes first, followed by the child class's constructor.
+// These inheritance can be private, public, and protected:
 // private Inheritance: all public members of the parent class become private members of the child class & all protected members of the parent class become private
 //                      members of the child class
 // protected Inheritance: all public members of the parent class become protected members of the child class & all protected members of the parent class become protected
@@ -47,7 +48,7 @@ class Child : public Parent
 		string name;
 
 	public:
-		Child(int id = 0, string name = " "): Parent(id)
+		Child(int id = 0, string name = " "): Parent(id) // Passing argument to Parent Class Constructor.
 		{
 			this->name = name;
 		}
@@ -68,6 +69,8 @@ class Child : public Parent
 			cout << this->lepra << endl; // Allowed because is a public member of the Parent Class
 			//cout << something; // Not allowed because is a private member. Compiler error
 		}
+
+		// Overriding - Child class can override a member function of its Parent class by defining a child class member function with the same name & parameter list.
 };
 #endif
 
