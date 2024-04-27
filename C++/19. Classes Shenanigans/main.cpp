@@ -4,7 +4,7 @@
 #include "Number.h"
 #include "IntValue.h"
 #include "ObjectComp.h"
-//#include "Animal.h"
+#include "Inheritance.h"
 using namespace std;
 
 int main()
@@ -112,8 +112,21 @@ int main()
 	// Object Composition
 	Book book1(357, 10.20, 20.40);
 	cout << book1.totalCost() << endl;
+	cout << "===========================================\n";
 
-	
+	// Inheritance
+	Parent father(20);
+	cout << "Father ID: " << father.getId() << endl;
+	father.setId(30);
+
+	Child child(40, "Manni"); // The constructor takes into account the Parent class
+	child.setId(60); // Children has the data members and functions of the Parent class
+	child.setName("Mannui");
+	cout << "Child ID: " << child.getId() << endl; // Children has the data members and functions of the Parent class
+	cout << "Child Name: " << child.getName() << endl;
+	child.test();
+	cout << "===========================================\n";
+
 	return 0;
 }
 
