@@ -71,6 +71,8 @@ class Child : public Parent
 		}
 
 		// Overriding - Child class can override a member function of its Parent class by defining a child class member function with the same name & parameter list.
+		//              Typically used to replace a function in Parent class with different actions in child class (not the same as overloading). To access the 
+		//              overriden version of the function, use the scope resolution operator with the name of the parent class and the name of the function.
 };
 #endif
 
