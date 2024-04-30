@@ -49,7 +49,7 @@ Classes Shenanigans :heavy_check_mark:
 
 Operator Overloading :heavy_check_mark:
 
-Strings Shenanigans
+Strings Shenanigans :heavy_check_mark:
 
 Recursion
 
