@@ -53,7 +53,7 @@ Strings Shenanigans :heavy_check_mark:
 
 Recursion :heavy_check_mark:
 
-Class Templates
+Class Templates :heavy_check_mark:
 
 Linked Lists
 
