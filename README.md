@@ -51,7 +51,7 @@ Operator Overloading :heavy_check_mark:
 
 Strings Shenanigans :heavy_check_mark:
 
-Recursion
+Recursion :heavy_check_mark:
 
 Class Templates
 
