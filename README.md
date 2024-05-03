@@ -55,5 +55,5 @@ Recursion :heavy_check_mark:
 
 Class Templates :heavy_check_mark:
 
-Linked Lists
+Linked Lists :heavy_check_mark:
 
