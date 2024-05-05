@@ -96,10 +96,13 @@ int main()
 	// rand() - returns a random number between 0 and the largest int the computer holds. Will yield the same sequence of numbers each time the program is run
 	// srand(x) - initializes random number generator with unsigned int x. x is the "seed value". Should be called at most once in a program.
 	// time() to generate different seed values each time that a program runs
-	int max = 10;
-	int number;
-	number = rand() % max + 1;
-	cout << "Random number scaled up to 10: " << number << endl;
+	int randomNumber1, min = 1, max = 10;
+	
+	// Seed random generator
+	unsigned int seed = time(0);
+	srand(seed);
+	randomNumber1 = rand() % (max -  min + 1) + min;
+	cout << "Random number between 1 and 10 (includes them): " << randomNumber1 << endl;
 
 	// Files - They can be used for program input/output. Files are stored on secondary storage media and they allow data to be retained between program runs.
 	//ifstream inFile; // ifstream - is used as the type to declare an object for an input file
