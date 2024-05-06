@@ -7,39 +7,39 @@
 using namespace std;
 
 // Global constant variables
-const float comicPrice = 9.99;
-const float shippingPrice = 3.99;
+const float bookPrice = 10.99;
+const float shippingPrice = 2.99;
 
 // Function Prototypes
-void comicBookInfo(int &comicO, int &comicStock, float &specialC);
-int calculateComicToShip(int comicO, int comicStock);
-int calculateBackOrder(int comicO, int comicStock);
-float calculateComicsPrice(int comicRTS);
+void bookInfo(int &bookO, int &bookStock, float &specialC);
+int calculateBookToShip(int bookO, int bookStock);
+int calculateBackOrder(int bookO, int bookStock);
+float calculateBookPrice(int bookRTS);
 float calculateTotalShipping(float specialC);
-float calculateTotalPrice(float totalSP, float comicP);
-void saveToFile(int comicO, int comicStock, int comicRTS, int bO, float comicP, float totalSP, float total);
+float calculateTotalPrice(float totalSP, float bookP);
+void saveToFile(int bookO, int bookStock, int bookRTS, int bO, float bookP, float totalSP, float total);
 
 int main()
-{	
+{
 	float specialCharges,
-		  comicsPrice,
-		  totalShippingPrice,
-		  totalPrice;
+		bookPrice,
+		totalShippingPrice,
+		totalPrice;
 
-	int comicsOrdered,
-		comicsInStock,
-		comicReadyToShip,
+	int bookOrdered,
+		bookInStock,
+		bookReadyToShip,
 		backOrder;
 
-	cout << "Hello, this program will print out information for an order of comics" << endl;
+	cout << "Hello, this program will print out information for an order of books" << endl;
 
-	comicBookInfo(comicsOrdered, comicsInStock, specialCharges);
-	comicReadyToShip = calculateComicToShip(comicsOrdered, comicsInStock);
-	backOrder = calculateBackOrder(comicsOrdered, comicsInStock);
-	comicsPrice = calculateComicsPrice(comicReadyToShip);
+	bookInfo(bookOrdered, bookInStock, specialCharges);
+	bookReadyToShip = calculateBookToShip(bookOrdered, bookInStock);
+	backOrder = calculateBackOrder(bookOrdered, bookInStock);
+	bookPrice = calculateBookPrice(bookReadyToShip);
 	totalShippingPrice = calculateTotalShipping(specialCharges);
-	totalPrice = calculateTotalPrice(totalShippingPrice, comicsPrice);
-	saveToFile(comicsOrdered, comicsInStock, comicReadyToShip, backOrder, comicsPrice, totalShippingPrice, totalPrice);
+	totalPrice = calculateTotalPrice(totalShippingPrice, bookPrice);
+	saveToFile(bookOrdered, bookInStock, bookReadyToShip, backOrder, bookPrice, totalShippingPrice, totalPrice);
 
 	return 0;
 }
@@ -47,28 +47,28 @@ int main()
 // Function Declarations
 
 /*
-	Function: void comicBookInfo(int &comicO, int &comicStock, float &specialC)
-	Parameters: Receives the comicsOrdered, comicsInStock and specialCharges variables
+	Function: void bookInfo(int &bookO, int &bookStock, float &specialC)
+	Parameters: Receives the bookO, bookStock and specialC variables
 	Return Values: Set the passed variables
-	Purpose: To set the variables comicsOrdered, comicsInStock and specialCharges to a value chosen by the user
+	Purpose: To set the variables bookO, bookStock and specialC to a value chosen by the user
 */
-void comicBookInfo(int &comicO, int &comicStock, float &specialC)
+void bookInfo(int& bookO, int& bookStock, float& specialC)
 {
-	cout << "Comic books ordered: ";
-	do 
-	{
-		cin >> comicO;
-		if (comicO <= 0)
-			cout << "Please reenter the number of comic books ordered: ";
-	} while (comicO <= 0);
-
-	cout << "Comic books in stock: ";
+	cout << "Books ordered: ";
 	do
 	{
-		cin >> comicStock;
-		if (comicStock < 0)
-			cout << "Please reenter the number of comic books in stock: ";
-	} while (comicStock < 0);
+		cin >> bookO;
+		if (bookO <= 0)
+			cout << "Please reenter the number of books ordered: ";
+	} while (bookO <= 0);
+
+	cout << "Books in stock: ";
+	do
+	{
+		cin >> bookStock;
+		if (bookStock < 0)
+			cout << "Please reenter the number of books in stock: ";
+	} while (bookStock < 0);
 
 	cout << "Enter any special shipping charges: ";
 	do
@@ -80,47 +80,47 @@ void comicBookInfo(int &comicO, int &comicStock, float &specialC)
 }
 
 /*
-	Function: int calculateComicToShip(int comicO, int comicStock)
-	Parameters: Receives comicsOrdered and comicsInStock
-	Return Values: comicReadyToShip
-	Purpose: Given the comicsOrdered and comicsInStock, this function evaluates the number of comic books ready to ship from current stock
+	Function: int calculateBookToShip(int bookO, int bookStock )
+	Parameters: Receives bookO and bookStock
+	Return Values: bookReadyToShip
+	Purpose: Given the bookO and bookStock, this function evaluates the number of books ready to ship from current stock
 */
-int calculateComicToShip(int comicO, int comicStock)
+int calculateBookToShip(int bookO, int bookStock)
 {
-	if (comicO <= comicStock)
-		return comicO;
+	if (bookO <= bookStock)
+		return bookO;
 	else
-		return comicStock;
+		return bookStock;
 }
 
 /*
-	Function: int calculateBackOrder(int comicO, int comicStock)
-	Parameters: Receives comicsOrdered and comicsInStock
+	Function: int calculateBackOrder(int bookO, int bookStock)
+	Parameters: Receives bookO and bookStock
 	Return Values: backOrder
-	Purpose: Calculates backorder by applying (comicsOrdered - comicsInStock)
+	Purpose: Calculates backorder by applying (bookO - bookStock)
 */
-int calculateBackOrder(int comicO, int comicStock)
+int calculateBackOrder(int bookO, int bookStock)
 {
-	if (comicO > comicStock)
-		return comicO - comicStock;
+	if (bookO > bookStock)
+		return bookO - bookStock;
 }
 
 /*
-	Function: float calculateComicsPrice(int comicRTS)
-	Parameters: Receives comicReadyToShip
-	Return Values: comicsPrice
-	Purpose: Calculates the price of the comic books ready for shipment
+	Function: float calculateBookPrice(int bookRTS)
+	Parameters: Receives bookReadyToShip
+	Return Values: bookPrice
+	Purpose: Calculates the price of the books ready for shipment
 */
-float calculateComicsPrice(int comicRTS)
+float calculateBookPrice(int bookRTS)
 {
-	return comicRTS * comicPrice;
+	return bookRTS * bookPrice;
 }
 
 /*
 	Function: float calculateTotalShipping(float specialC)
-	Parameters: Receives specialCharges 
+	Parameters: Receives specialC
 	Return Values: totalShippingPrice
-	Purpose: Calculates the total shipping price by applying (specialCharges + shippingPrice)
+	Purpose: Calculates the total shipping price by applying (specialC + shippingPrice)
 */
 float calculateTotalShipping(float specialC)
 {
@@ -128,47 +128,47 @@ float calculateTotalShipping(float specialC)
 }
 
 /*
-	Function: float calculateTotalPrice(float totalSP, float comicP)
-	Parameters: Receives totalShippingPrice and comicsPrice
+	Function: float calculateTotalPrice(float totalSP, float bookP)
+	Parameters: Receives totalShippingPrice and bookP
 	Return Values: totalPrice
-	Purpose: Calculates the total price by applying (totalShippingPrice + comicsPrice)
+	Purpose: Calculates the total price by applying (totalShippingPrice + bookPrice)
 */
-float calculateTotalPrice(float totalSP, float comicP)
+float calculateTotalPrice(float totalSP, float bookP)
 {
-	return totalSP  + comicP;
+	return totalSP + bookP;
 }
 
 /*
-	Function: void saveToFile(int comicO, int comicStock, int comicRTS, int bO, float comicP, float totalSP, float total)
-	Parameters: Receives comicsOrdered, comicsInStock, comicReadyToShip, backOrder, comicsPrice, totalShippingPrice and totalPrice
+	Function: void saveToFile(int bookO, int bookStock, int bookRTS, int bO, float bookP, float totalSP, float total)
+	Parameters: Receives bookOrdered, bookStock, bookReadyToShip, bookO, bookPrice, totalShippingPrice and totalPrice
 	Return Values: None
-	Purpose: Outputs to a file all the information regarding the order of comic books
+	Purpose: Outputs to a file all the information regarding the order of books
 */
-void saveToFile(int comicO, int comicStock, int comicRTS, int bO, float comicP, float totalSP, float total)
+void saveToFile(int bookO, int bookStock, int bookRTS, int bO, float bookP, float totalSP, float total)
 {
-	ofstream outputFile("Receipt Comics.txt");
-	outputFile << "Amazing Comic Book Company Order" << endl
-			   << "================================================" << endl
-		       << "Comics ordered: " << comicO << endl
-		       << "Comics in stock: " << comicStock << endl
-		       << "Comics ready for shipment: " << comicRTS << endl;
+	ofstream outputFile("Receipt Books.txt");
+	outputFile << "Book Company Order" << endl
+		<< "================================================" << endl
+		<< "Books ordered: " << bookO << endl
+		<< "Books in stock: " << bookStock << endl
+		<< "Books ready for shipment: " << bookRTS << endl;
 
-	if (comicO > comicStock)
+	if (bookO > bookStock)
 	{
-		outputFile << "Comics Backorder: " << bO << endl;
+		outputFile << "Books Backorder: " << bO << endl;
 	}
-	outputFile << "Comics price: $" << comicP << endl;
+	outputFile << "Books price: $" << bookP << endl;
 
 
-	if (comicRTS != 0)
+	if (bookRTS != 0)
 	{
 		outputFile << "Total shipping price: $" << totalSP << endl
-			       << "Total price: $" << total << endl;
-	} 
-	else if (comicRTS == 0)
+			<< "Total price: $" << total << endl;
+	}
+	else if (bookRTS == 0)
 	{
 		outputFile << "Total shipping price: $" << 0 << endl
-				   << "Total price: $" << 0 << endl;
+			<< "Total price: $" << 0 << endl;
 	}
 
 	outputFile << "================================================";
