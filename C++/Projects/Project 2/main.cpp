@@ -1,5 +1,4 @@
 /*
-	Alan Montero Colon
 	Purpose: Book Company Project - print out information for an order of books
 */
 #include <iostream>
