@@ -4,8 +4,10 @@ using namespace std;
 
 int main()
 {
-	// Variable are symbolic names that refer to a physical memory addresses that we use to store values.
-	// This is a variable DECLARATION. Consists of a dataType variableName. The data type is int(store an integer value) and the given name is "quantity" 
+	/* 
+		Variable are symbolic names that refer to a physical memory addresses that we use to store values.
+		This is a variable DECLARATION. Consists of a dataType variableName. The data type is int(store an integer value) and the given name is "quantity" 
+	*/
 	int quantity; // Identifier (name of the variable) first character must be a letter or underscore; it can have digits but not as first character.
 
 	// This is a variable INITIALIZATION. variableName = value assigned

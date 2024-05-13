@@ -59,6 +59,8 @@ Linked Lists :heavy_check_mark:
 
 Projects :heavy_check_mark:
 
+GUI 
+
 # GIT
 
 # HTML & CSS
