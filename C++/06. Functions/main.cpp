@@ -4,9 +4,9 @@ using namespace std;
 
 /*
 *  Function definition - consists of:
-*									 return type: data type of the value the function returns. if a function doesnt return a value it's data type is void.
-*									 name: name of the function
-*									 paramater list: the variables that hold the values that are passed to the function when it is called. Parameters for functions are local variables
+*				     return type: data type of the value the function returns. if a function doesnt return a value it's data type is void.
+*				     name: name of the function
+*				     paramater list: the variables that hold the values that are passed to the function when it is called. Parameters for functions are local variables
 *                                    body: statements that perform the function's task
 */
 void printHeading(string h1); // Function prototype - has 1 parameter in this case: string h1 (can have more than one); the data type has to be specified for each parameter
@@ -19,7 +19,7 @@ void startRace(int number);
 /// Default Arguments - values that are passed automatically if arguments are missing from a function call. The parameters without defaults must be declared first 
 int multiplyThreeNumbers(int firstNumber, int secondNumber = 1, int thirdNumber = 1);
 
-/// References Variable as Parameters - allows a function to work with the original argument from the function call, does not creat a copy of the argument. Allos function to modify values stored in the calling env.
+/// References Variable as Parameters - allows a function to work with the original argument from the function call, does not creat a copy of the argument. Allows function to modify values stored in the calling env.
 void getDimensions(int &d1, int &d2); // reference variable (&) - makes so the changes made to the variable are made to the argument it refers to
 
 /// Overloaded functions - two or more functions that have the same name but different data types parameters or different number of parameters or both
