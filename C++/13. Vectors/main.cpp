@@ -18,9 +18,9 @@ int main()
 
 	// typedef with vectors
 	intVec values; // Declaring a vector of integers; has 0 elements
-	intVec values2(50); // Declaring a vector with initial size of 30 elements
+	intVec values2(50); // Declaring a vector with initial size of 50 elements
 	intVec values3(10, 0); // Declaring a vector with initial size of 10 elements and all elements initialize to 0
-	intVec values4(values3); // Declaring a vector initialized to size and contents of vector values 3
+	intVec values4(values3); // Declaring a vector initialized to size and contents of vector values3
 
 	// Passing a vector by value
 	showData(values3);
