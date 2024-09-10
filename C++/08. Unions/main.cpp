@@ -16,6 +16,8 @@ int main()
 
 	cout << "Annual Salary: " << wI.annualSalary << endl;
 	cout << "Hourly Rate: " << wI.hourlyRate << endl;
+	cout << "Annual Salary Memory Address: " << &wI.annualSalary << endl;
+	cout << "Hourly Rate Memory Address: " << &wI.hourlyRate << endl;
 
 	return 0;
 }
