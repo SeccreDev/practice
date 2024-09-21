@@ -16,8 +16,8 @@ int main()
 	cout << &number << endl; // Print the hex address
 	cout << "===============================================" << endl;
 
-    // Pointer variable (pointer) - a variable that holds, stores, the address of a memory location. Alternate way to access memory locations. 
-	//								Size of pointer for 32 bit the size is 4 bytes and for 64 bit the size is 8 bytes.
+        // Pointer variable (pointer) - a variable that holds, stores, the address of a memory location. Alternate way to access memory locations. 
+	//				Size of pointer for 32 bit the size is 4 bytes and for 64 bit the size is 8 bytes.
 	int* intPtr; // Definition - can hold the address of an int or the variable that intptr points to has type int
 	intPtr = &number;
 	cout << intPtr << endl; // Print the hex address
