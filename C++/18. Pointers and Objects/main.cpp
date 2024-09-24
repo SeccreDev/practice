@@ -52,7 +52,7 @@ int main()
 	cout << "Dynamic student name: " << dynamicStudentPointer->studentName << endl;
 	delete dynamicStudentPointer;
 
-	// Passing an object pointer as parameter
+	// Passing a structure pointer as parameter
 	Student *dynamicStudentPointer2 = new Student;
 	changeStudent(dynamicStudentPointer2);
 	cout << "Dynamic Student Area: " << dynamicStudentPointer2->studentID << endl;
@@ -83,9 +83,9 @@ int main()
 
 	// Program Memory:
 	//                - run-time stack
-	//				  - free storage (heap): Memory dynamically allocated
-	//				  - static storage: static variables definitions
-	//				  - code storage: global definitions
+	//		  - free storage (heap): Memory dynamically allocated
+	//		  - static storage: static variables definitions
+	//		  - code storage: global definitions
 
 	return 0;
 }
