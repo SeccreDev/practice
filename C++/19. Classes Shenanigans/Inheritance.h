@@ -14,10 +14,11 @@ class Parent
 	//             members of a parent class can be accessed by a child class. They can be called-on by member functions, friend functions, and friend classes
 	protected:
 		int id;
-// private: int something; // Private members of a class are never accessible from anywhere except from member functions of the same class
+	// private: int something; // Private members of a class are never accessible from anywhere except from member functions of the same class
 
 	public:
 		string lepra = "working";
+		// this Pointer - can be used to access members that may be hidden by parameters with the same name
 		Parent(int id = 0)
 		{
 			this->id = id;
