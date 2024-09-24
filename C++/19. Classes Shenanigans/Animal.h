@@ -16,7 +16,6 @@ private:
 
 public:
 	/// Constructor
-	// this Pointer - can be used to access members that may be hidden by parameters with the same name
 	Animal(string name = "", int age = 0)
 	{
 		animalName = name; 
