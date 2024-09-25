@@ -28,7 +28,7 @@ class Rectangle
 		}
 };
 
-// Object Composition - when an object of a class is a member variable of an object of another. Often used to design complex objects whose members are simpler objects. 
+// Object Composition - when an object of a class is a member variable of an object of another class. Often used to design complex objects whose members are simpler objects. 
 //                      Object Composition model the has-a relation between classes
 class Book
 {
@@ -45,7 +45,6 @@ class Book
 		Book(int p, float l, float w): size(l, w)
 		{
 			this->pages = p;
-			
 		}
 
 		void setPages(int p)
