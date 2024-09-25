@@ -59,9 +59,9 @@ int main()
 
 	// Copy Constructor - a special constructor used when a newly created object is initialized to the data of another object of the same class.
 	//                    If the programmer does not define a copy constructor for the class then the compiler calls a default copy constructor which copies corresponding
-	//					  data from one object to another of the same class. Default copy constructor copies field-to-field values, using member-wise assignment.
+	//		      data from one object to another of the same class. Default copy constructor copies field-to-field values, using member-wise assignment.
 	//                    
-	//					  Copy constructor is automatically called when: object is initialized using an object of the same class, an object is passed by value to a function, and when
+	//		      Copy constructor is automatically called when: object is initialized using an object of the same class, an object is passed by value to a function, and when
 	//                    an object is returned using a return statement from a function
 	BadCopy c1(5.5);
 	//BadCopy c2 = c1; // Default Copy Constructor called. Default Copy Constructor will share the same dynamic storage and cause an error. The destructor of one object deletes memory still in use by the other object. 
@@ -100,7 +100,7 @@ int main()
 	cout << "===========================================\n";
 
 	// Default Class Operations - C++ generates default constructor, copy constructor, copy assignment operator, move constructor, and destructor
-	//							  If you provide an implementation of any of these functions, you should provide an implementation for all of them.
+	//			      If you provide an implementation of any of these functions, you should provide an implementation for all of them.
 
 	// Conversion Operator
 	IntValue valor(100);
