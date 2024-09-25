@@ -41,7 +41,7 @@ class Square
 		{
 			cout << "The destructor was called! EXTERMINATE!\n";
 			delete randomPointer;
-			randomPointer = NULL;
+			randomPointer = nullptr;
 		}
 };
 
@@ -52,7 +52,7 @@ int main()
 	cout << "The area of my box is: " << myBox.getArea() << endl;
 	cout << "Edward has a box with the area of: " << sqPointer->getArea() << endl;
 	delete sqPointer;
-	sqPointer = NULL;
+	sqPointer = nullptr;
 	
 	return 0;
 }
