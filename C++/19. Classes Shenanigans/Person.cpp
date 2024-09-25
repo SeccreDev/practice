@@ -4,12 +4,12 @@
 int Person::personCount = 0; // Static Member Variable initialized to 0
 
 // Setters
-void Person::setName(const string n)
+void Person::setName(const string &n)
 {
 	name = n;
 }
 
-void Person::setAge(const int a)
+void Person::setAge(const int &a)
 {
 	age = a;
 }
