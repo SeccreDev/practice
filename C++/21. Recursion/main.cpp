@@ -4,7 +4,7 @@ using namespace std;
 // Recursive function - a function that calls itself. Is a loop that can be useful in solving problems that can be broken down into smaller sub-problems of the same type.
 //						a base case should eventually be reached, at that time the recursion will stop.
 // Types of Recursion: -Direct Recursion: a function calls itself
-//					   -Indirect Recursion: function A calls function B, function B calls function A.
+//		       -Indirect Recursion: function A calls function B, function B calls function A.
 
 void hello() // This fumction calls itself infinitely, a base case is never reached.
 {
