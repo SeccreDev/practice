@@ -25,11 +25,11 @@ int main()
 	Node* head = NULL;  // creates an empty linked list!
 	Node* traversal = NULL;
 
-	head = new Node(50, head);
-	head = new Node(54, head);
-	head = new Node(984, head);
-	head = new Node(651, head);
-	head = new Node(498, head);
+	head = new Node(50, head); // The head is pointing towards NULL
+	head = new Node(54, head); // The head is pointing towards the Node that has the data initialized to 50
+	head = new Node(984, head); // The head is pointing towards the Node that has the data initialized to 54
+	head = new Node(651, head); // The head is pointing towards the Node that has the data initialized to 984
+	head = new Node(498, head); // The head is pointing towards the Node that has the data initialized to 641
 
 	traversal = head;
 	while (traversal != NULL)
